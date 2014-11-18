@@ -25,9 +25,9 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.aksw</groupId>
-    <artifactId>palmetto</artifactId>
-    <version>0.1.0</version>
-    <name>Palmetto</name>
+    <artifactId>palmetto.classification</artifactId>
+    <version>0.0.1</version>
+    <name>Palmetto classification lib</name>
     <description>Palmetto is a quality measure tool for topics.</description>
     <packaging>jar</packaging>
 
@@ -35,7 +35,6 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <slf4j-version>1.7.5</slf4j-version>
-        <lucene-version>4.4.0</lucene-version>
         <developer-name>Michael Röder</developer-name>
         <developer-mail>michael.roeder@unister.de</developer-mail>
         <project.inceptionYear>2014</project.inceptionYear>
@@ -66,17 +65,17 @@
             <artifactId>hppc</artifactId>
             <version>0.5.3</version>
         </dependency>
-        <!-- Lucene -->
+        <!-- Lib SVM -->
         <dependency>
-            <groupId>org.apache.lucene</groupId>
-            <artifactId>lucene-core</artifactId>
-            <version>${lucene-version}</version>
+            <groupId>tw.edu.ntu.csie</groupId>
+            <artifactId>libsvm</artifactId>
+            <version>3.17</version>
         </dependency>
-        <!-- Lucene analyzers -->
+        <!-- Weka -->
         <dependency>
-            <groupId>org.apache.lucene</groupId>
-            <artifactId>lucene-analyzers-common</artifactId>
-            <version>${lucene-version}</version>
+            <groupId>nz.ac.waikato.cms.weka</groupId>
+            <artifactId>weka-stable</artifactId>
+            <version>3.6.7</version>
         </dependency>
         <!-- Apache Commons IO -->
         <dependency>
@@ -97,12 +96,6 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
             <version>${slf4j-version}</version>
-        </dependency>
-        <!-- make Logging with java.util.Logging possible -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>jul-to-slf4j</artifactId>
-            <version>1.6.5</version>
         </dependency>
         <!-- ~~~~~~~~~~~~~~~~~~~ End Logging ~~~~~~~~~~~~~~~~~~~~~~ -->
 
