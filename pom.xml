@@ -1,26 +1,29 @@
-<!-- Copyright (C) 2014 Michael Röder (michael.roeder@unister.de) Permission 
-	is hereby granted, free of charge, to any person obtaining a copy of this 
-	software and associated documentation files (the "Software"), to deal in 
-	the Software without restriction, including without limitation the rights 
-	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell 
-	copies of the Software, and to permit persons to whom the Software is furnished 
-	to do so, subject to the following conditions: The above copyright notice 
-	and this permission notice shall be included in all copies or substantial 
-	portions of the Software. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY 
-	OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES 
-	OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. 
-	IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, 
-	DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, 
-	ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
-	DEALINGS IN THE SOFTWARE. -->
+<!--
+
+    This file is part of Palmetto Web Application.
+
+    Palmetto Web Application is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Palmetto Web Application is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public License
+    along with Palmetto Web Application.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.aksw</groupId>
-	<artifactId>palmetto-webapp</artifactId>
-	<version>0.1.1</version>
-	<name>Palmetto Web Application</name>
-	<description>Palmetto is a quality measure tool for topics.</description>
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.aksw</groupId>
+    <artifactId>palmetto-webapp</artifactId>
+    <version>0.1.1</version>
+    <name>Palmetto Web Application</name>
+    <description>Palmetto is a quality measure tool for topics.</description>
 
 	<!-- PROPERTIES -->
 	<properties>
@@ -28,22 +31,20 @@
 		<slf4j-version>1.7.5</slf4j-version>
 		<lucene-version>4.4.0</lucene-version>
 		<spring.version>3.2.17.RELEASE</spring.version>
-		<developer-name>Michael Röder</developer-name>
-		<developer-mail>michael.roeder@unister.de</developer-mail>
-		<project.inceptionYear>2014</project.inceptionYear>
-	</properties>
+        <project.inceptionYear>2014</project.inceptionYear>
+    </properties>
 
 	<!-- DEVELOPERS -->
 	<developers>
 		<developer>
 			<id>m.roeder</id>
-			<name>${developer-name}</name>
-			<email>${developer-mail}</email>
+			<name>Michael Röder</name>
+			<email>roeder@informatik.uni-leipzig.de</email>
 		</developer>
 	</developers>
 
-	<!-- REPOSITORIES -->
-	<repositories>
+    <!-- REPOSITORIES -->
+    <repositories>
 		<repository>
 			<id>maven.aksw.internal</id>
 			<name>University Leipzig, AKSW Maven2 Repository</name>
@@ -59,17 +60,17 @@
 			<name>Apache Repository</name>
 			<url>https://repository.apache.org/content/repositories/releases/</url>
 		</repository>
-	</repositories>
+    </repositories>
 
-	<!-- DEPENDENCIES -->
-	<dependencies>
+    <!-- DEPENDENCIES -->
+    <dependencies>
 		<!-- Palmetto -->
 		<dependency>
 			<groupId>org.aksw</groupId>
 			<artifactId>palmetto</artifactId>
 			<version>0.1.1</version>
 		</dependency>
-		<!-- HTTP server mock -->
+		<!-- Simple HTTP server -->
 		<dependency>
 			<groupId>org.simpleframework</groupId>
 			<artifactId>simple-http</artifactId>
@@ -121,66 +122,67 @@
 		<!-- ~~~~~~~~~~~~~~~~~~~ End Testing ~~~~~~~~~~~~~~~~~~~~~~ -->
 	</dependencies>
 
-	<build>
-		<finalName>palmetto-webapp</finalName>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
-				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
-				</configuration>
-			</plugin>
-			<plugin>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<version>2.4</version>
-				<configuration>
-					<descriptorRefs>
-						<descriptorRef>jar-with-dependencies</descriptorRef>
-					</descriptorRefs>
-					<archive>
-						<manifest>
-							<mainClass>org.aksw.palmetto.Palmetto</mainClass>
-						</manifest>
-					</archive>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-source-plugin</artifactId>
-				<version>2.2.1</version>
-				<executions>
-					<execution>
-						<id>attach-sources</id>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
+    <build>
+        <finalName>palmetto-webapp</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <archive>
+                        <manifest>
+                            <mainClass>org.aksw.palmetto.Palmetto</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 			<!-- License management plugin -->
 			<plugin>
 				<groupId>com.mycila</groupId>
 				<artifactId>license-maven-plugin</artifactId>
-				<version>2.6</version>
+				<version>2.11</version>
 				<configuration>
-					<header>src/main/resources/license_template.txt</header>
+					<header>com/mycila/maven/plugin/license/templates/LGPL-3.txt</header>
 					<properties>
-						<owner>${developer-name}</owner>
-						<year>${project.inceptionYear}</year>
-						<email>${developer-mail}</email>
+						<owner>Agile Knowledge Engineering and Semantic Web (AKSW)
+							(roeder@informatik.uni-leipzig.de)</owner>
 					</properties>
 					<excludes>
 						<exclude>**/README</exclude>
 						<exclude>**/LICENSE</exclude>
-						<exclude>**/web.xml</exclude>
+						<exclude>**/Dockerfile</exclude>
+						<exclude>diagrams/**</exclude>
 						<exclude>src/test/resources/**</exclude>
 						<exclude>src/main/resources/**</exclude>
+						<exclude>src/main/webapp/**</exclude>
 					</excludes>
 				</configuration>
 			</plugin>
-		</plugins>
-	</build>
+        </plugins>
+    </build>
 </project>
