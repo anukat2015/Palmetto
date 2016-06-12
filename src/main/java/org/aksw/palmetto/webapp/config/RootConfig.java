@@ -42,11 +42,7 @@ import org.aksw.palmetto.subsets.OneSet;
 import org.aksw.palmetto.vector.DirectConfirmationBasedVectorCreator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 
-@org.springframework.context.annotation.Configuration
-@ComponentScan(basePackages = "org.aksw.palmetto.webapp")
 public class RootConfig {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(RootConfig.class);
@@ -75,7 +71,7 @@ public class RootConfig {
 
     private static final String INDEX_PATH_PROPERTY_KEY = "org.aksw.palmetto.webapp.resources.AbstractCoherenceResource.indexPath";
 
-    static @Bean public WindowSupportingAdapter createLuceneAdapter() throws Exception {
+    static public WindowSupportingAdapter createLuceneAdapter() throws Exception {
         String indexPath = PalmettoConfiguration.getInstance().getString(INDEX_PATH_PROPERTY_KEY);
         if (indexPath == null) {
             String errormsg = "Couldn't load \"" + INDEX_PATH_PROPERTY_KEY + "\" from properties. Aborting.";
@@ -86,7 +82,6 @@ public class RootConfig {
                 Palmetto.DEFAULT_DOCUMENT_LENGTH_INDEX_FIELD_NAME);
     }
 
-    @Bean(name="coherences")
     static public Map<String, Coherence> createCoherences(WindowSupportingAdapter corpusAdapter) {
         Map<String, Coherence> coherences = new HashMap<String, Coherence>();
         coherences.put(CA_REQUEST_PATH, createCACoherence(corpusAdapter));
