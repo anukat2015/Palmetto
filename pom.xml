@@ -1,29 +1,21 @@
-<!--
-
-    This file is part of Palmetto Web Application.
-
-    Palmetto Web Application is free software: you can redistribute it and/or modify
-    it under the terms of the GNU Lesser General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    Palmetto Web Application is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU Lesser General Public License for more details.
-
-    You should have received a copy of the GNU Lesser General Public License
-    along with Palmetto Web Application.  If not, see <http://www.gnu.org/licenses/>.
-
--->
+<!-- This file is part of Palmetto Web Application. Palmetto Web Application 
+	is free software: you can redistribute it and/or modify it under the terms 
+	of the GNU Lesser General Public License as published by the Free Software 
+	Foundation, either version 3 of the License, or (at your option) any later 
+	version. Palmetto Web Application is distributed in the hope that it will 
+	be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of 
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General 
+	Public License for more details. You should have received a copy of the GNU 
+	Lesser General Public License along with Palmetto Web Application. If not, 
+	see <http://www.gnu.org/licenses/>. -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>org.aksw</groupId>
-    <artifactId>palmetto-webapp</artifactId>
-    <version>0.1.1</version>
-    <name>Palmetto Web Application</name>
-    <description>Palmetto is a quality measure tool for topics.</description>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.aksw</groupId>
+	<artifactId>palmetto-webapp</artifactId>
+	<version>0.1.1</version>
+	<name>Palmetto Web Application</name>
+	<description>Palmetto is a quality measure tool for topics.</description>
 
 	<!-- PROPERTIES -->
 	<properties>
@@ -31,8 +23,8 @@
 		<slf4j-version>1.7.5</slf4j-version>
 		<lucene-version>4.4.0</lucene-version>
 		<spring.version>3.2.17.RELEASE</spring.version>
-        <project.inceptionYear>2014</project.inceptionYear>
-    </properties>
+		<project.inceptionYear>2014</project.inceptionYear>
+	</properties>
 
 	<!-- DEVELOPERS -->
 	<developers>
@@ -43,8 +35,8 @@
 		</developer>
 	</developers>
 
-    <!-- REPOSITORIES -->
-    <repositories>
+	<!-- REPOSITORIES -->
+	<repositories>
 		<repository>
 			<id>maven.aksw.internal</id>
 			<name>University Leipzig, AKSW Maven2 Repository</name>
@@ -60,10 +52,10 @@
 			<name>Apache Repository</name>
 			<url>https://repository.apache.org/content/repositories/releases/</url>
 		</repository>
-    </repositories>
+	</repositories>
 
-    <!-- DEPENDENCIES -->
-    <dependencies>
+	<!-- DEPENDENCIES -->
+	<dependencies>
 		<!-- Palmetto -->
 		<dependency>
 			<groupId>org.aksw</groupId>
@@ -122,45 +114,45 @@
 		<!-- ~~~~~~~~~~~~~~~~~~~ End Testing ~~~~~~~~~~~~~~~~~~~~~~ -->
 	</dependencies>
 
-    <build>
-        <finalName>palmetto-webapp</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
-                <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <version>2.4</version>
-                <configuration>
-                    <descriptorRefs>
-                        <descriptorRef>jar-with-dependencies</descriptorRef>
-                    </descriptorRefs>
-                    <archive>
-                        <manifest>
-                            <mainClass>org.aksw.palmetto.Palmetto</mainClass>
-                        </manifest>
-                    </archive>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>2.2.1</version>
-                <executions>
-                    <execution>
-                        <id>attach-sources</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+	<build>
+		<finalName>palmetto-webapp</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+					<archive>
+						<manifest>
+							<mainClass>org.aksw.palmetto.Palmetto</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.2.1</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 			<!-- License management plugin -->
 			<plugin>
 				<groupId>com.mycila</groupId>
@@ -183,6 +175,21 @@
 					</excludes>
 				</configuration>
 			</plugin>
-        </plugins>
-    </build>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.5.0</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>java</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<mainClass>org.aksw.palmetto.webapp.PalmettoApplication</mainClass>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
